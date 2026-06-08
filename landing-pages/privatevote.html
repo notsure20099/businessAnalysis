@@ -100,27 +100,30 @@
       font-size: 1.4rem;
       margin-bottom: 8px;
     }
+    .plans {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+    .plan {
+      flex: 1;
+      background: #0a0a0a;
+      border: 1px solid #1a1a1a;
+      border-radius: 10px;
+      padding: 18px 14px;
+      cursor: pointer;
+      transition: border-color 0.2s;
+    }
+    .plan:hover, .plan.active { border-color: #a855f7; }
+    .plan h3 { font-size: 0.95rem; margin-bottom: 4px; }
+    .plan .price { font-size: 1.3rem; font-weight: 700; color: #a855f7; }
+    .plan .desc { font-size: 0.75rem; color: #666; margin-top: 4px; }
     .cta-box .sub {
       color: #666;
       font-size: 0.9rem;
       line-height: 1.6;
       margin-bottom: 28px;
     }
-    .highlight {
-      background: #1a1a2e;
-      border-radius: 10px;
-      padding: 16px 18px;
-      text-align: left;
-      margin-bottom: 28px;
-    }
-    .highlight .row {
-      display: flex;
-      justify-content: space-between;
-      padding: 5px 0;
-      font-size: 0.85rem;
-    }
-    .highlight .row .label { color: #666; }
-    .highlight .row .val { color: #a855f7; font-weight: 600; }
 
     .form-group {
       display: flex;
@@ -207,15 +210,23 @@
 
   <section class="cta-section">
     <div class="cta-box">
-      <h2>免费接入前3个DAO</h2>
+      <h2>预约 Demo</h2>
       <div class="sub">
         基于 Sismo + zkEmail SDK，一行代码集成到你的 Snapshot 治理流程中。
       </div>
-      <div class="highlight">
-        <div class="row"><span class="label">技术栈</span><span class="val">ZK-SNARK + Sismo SDK</span></div>
-        <div class="row"><span class="label">集成时间</span><span class="val">1天内完成</span></div>
-        <div class="row"><span class="label">定价</span><span class="val">$3k-8k/项目</span></div>
+      <div class="plans">
+        <div class="plan active" onclick="selectPlan(this,'PV_Standard_5k')">
+          <h3>标准集成</h3>
+          <div class="price">$3k-8k<span style="font-size:0.7rem;font-weight:400;color:#888">/项目</span></div>
+          <div class="desc">匿名投票 · 1天集成 · 前3个DAO免费</div>
+        </div>
+        <div class="plan" onclick="selectPlan(this,'PV_Enterprise_20k')">
+          <h3>企业定制</h3>
+          <div class="price">$15k-25k<span style="font-size:0.7rem;font-weight:400;color:#888">/项目</span></div>
+          <div class="desc">隐私KYC · 合规方案 · 专属支持</div>
+        </div>
       </div>
+      <input type="hidden" name="tier" id="tier" value="PV_Standard_5k">
 
       <div id="form-area">
         <div class="form-group">
@@ -237,6 +248,11 @@
   <footer>PrivateVote · 基于零知识证明的匿名治理工具</footer>
 
   <script>
+    function selectPlan(el, tier) {
+      document.querySelectorAll('.plan').forEach(function(p){ p.classList.remove('active'); });
+      el.classList.add('active');
+      document.getElementById('tier').value = tier;
+    }
     function submitEmail() {
       var email = document.getElementById('email').value.trim();
       if (!email || !email.includes('@')) {
@@ -244,12 +260,13 @@
         return;
       }
       var role = document.getElementById('role').value;
+      var tier = document.getElementById('tier').value;
       document.getElementById('form-area').style.display = 'none';
       document.getElementById('success').style.display = 'block';
       fetch('https://formspree.io/f/xdavgeza', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: email, track: 'privatevote', role: role, timestamp: new Date().toISOString() })
+        body: JSON.stringify({ email: email, track: 'privatevote', role: role, tier: tier, timestamp: new Date().toISOString() })
       }).catch(function(){});
     }
   </script>
