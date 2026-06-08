@@ -1,0 +1,78 @@
+【需求验证计划 — 一周假门测试】
+
+核心理念：不要问"你会不会用"，要让对方"愿意付钱"。付钱是唯一的真信号。
+
+信号强度排序：付钱 > 留邮箱选付费套餐 > DM说需要 > 点赞转发
+
+
+【工具准备】
+
+落地页：Carrd（$19/年）或 Notion + Tally 表单
+收款：Gumroad / Stripe Payment Links / Lemon Squeezy
+流量：推特DM / Reddit / Discord / GitHub / 直接联系项目方
+
+
+【赛道一：链上数据分析工具 — 验证方案】
+
+落地页内容：
+- 标题：「Base链巨鲸实时追踪面板」
+- 副标题：「15分钟延迟推送大额转账、新池子部署、可疑地址异动」
+- CTA：「加入Waitlist — $19/月 早鸟价(限量50人)」
+
+流量获取：
+- 推特搜"Base chain tracking"、"onchain alerts"，找抱怨Dune太复杂的人DM
+- Reddit r/ethdev、r/CryptoCurrency 发帖分享免费Dune Query → 文末放落地页
+- 私信10个中小项目方：第一份竞品报告免费，满意再付费
+
+成功标准：20+人留邮箱 或 3+人点击付费按钮
+
+
+【赛道二：AA钱包SDK — 验证方案】
+
+落地页内容：
+- 标题：「EasyAA — 三行代码接入AA钱包」
+- 副标题：「封装Biconomy/ZeroDev/Pimlico，一行命令搞定UserOperation+Gas代付」
+- 代码展示区：npm install easy-aa，3行代码发起Gas代付交易
+- CTA：「获取Early Access — $99/月起」
+
+流量获取：
+- GitHub搜引用@biconomy/sdk或@zerodev/sdk的仓库，提Issue帮忙优化代码 → 推介方案
+- Discord进Base/Arbitrum/Optimism开发者频道，搜"wallet"、"account abstraction"
+- 推特发"ERC-4337生产环境最常见的5个坑"踩坑贴 → 文末引导落地页
+
+成功标准：5+个开发者留邮箱要求试用 或 1-2个说"能帮我们集成吗"
+
+
+【赛道三：ZK应用层 — 验证方案】
+
+落地页内容：
+- 标题：「私有投票SDK — 让DAO的敏感提案匿名化」
+- 副标题：「基于ZK，投票结果链上可验证，但无人知道谁投了什么」
+- CTA：「预约Demo — 免费接入前3个DAO」
+
+流量获取：
+- Snapshot上找5个活跃DAO的Discord，找"governance"/"proposal"频道
+- 观察有无敏感提案（裁员/卖币/换团队），私信提案发起人
+- 推特搜"DAO governance privacy"、"anonymous voting DAO"
+
+成功标准：3+个DAO核心成员说"这个问题确实存在"
+
+
+【执行日程】
+
+Day 1: 三个Carrd落地页 + Tally表单建好
+Day 2: 赛道一推特DM + 赛道二GitHub搜索联系
+Day 3: 赛道一Reddit发帖 + 赛道二Discord混开发者频道
+Day 4: 赛道三Snapshot找DAO + 私信治理负责人
+Day 5: 统计三个页面数据(邮件数、付费意向点击)
+Day 7: 汇总判断 → 哪个赛道信号最强就集中做哪个
+
+
+【当前状态】
+
+[ ] 赛道一落地页
+[ ] 赛道二落地页
+[ ] 赛道三落地页
+[ ] Day 1 完成
+[ ] Day 2-4 流量获取
+[ ] Day 7 数据汇总

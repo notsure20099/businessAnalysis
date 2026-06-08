@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>产品导航</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #0a0a0a;
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .container {
+      max-width: 700px;
+      padding: 60px 30px;
+    }
+    h1 {
+      font-size: 1.8rem;
+      margin-bottom: 8px;
+    }
+    .subtitle {
+      color: #888;
+      margin-bottom: 40px;
+    }
+    .cards {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .card {
+      background: #111;
+      border: 1px solid #222;
+      border-radius: 12px;
+      padding: 28px 30px;
+      text-decoration: none;
+      color: #fff;
+      transition: border-color 0.2s, background 0.2s;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .card:hover {
+      border-color: #6366f1;
+      background: #141416;
+    }
+    .card h2 { font-size: 1.1rem; margin-bottom: 6px; }
+    .card p { color: #666; font-size: 0.85rem; }
+    .arrow { color: #6366f1; font-size: 1.3rem; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>产品验证页</h1>
+    <p class="subtitle">三个方向的需求测试 — 选择你要了解的赛道</p>
+    <div class="cards">
+      <a href="/track1" class="card">
+        <div>
+          <h2>WhaleWatch — Base链巨鲸追踪面板</h2>
+          <p>实时追踪大额转账 · 新池子部署 · 可疑地址异动</p>
+        </div>
+        <span class="arrow">→</span>
+      </a>
+      <a href="/track2" class="card">
+        <div>
+          <h2>EasyAA — 三行代码接入AA钱包</h2>
+          <p>封装Biconomy/ZeroDev · 一行命令搞定Gas代付</p>
+        </div>
+        <span class="arrow">→</span>
+      </a>
+      <a href="/track3" class="card">
+        <div>
+          <h2>PrivateVote — DAO匿名投票SDK</h2>
+          <p>基于零知识证明 · 结果可验证 · 身份不暴露</p>
+        </div>
+        <span class="arrow">→</span>
+      </a>
+    </div>
+  </div>
+</body>
+</html>
