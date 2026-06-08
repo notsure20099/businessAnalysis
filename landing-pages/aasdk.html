@@ -178,8 +178,6 @@
   </style>
 </head>
 <body>
-  <nav><a href="/">← 返回</a></nav>
-
   <section class="hero">
     <div class="badge">ERC-4337 · EIP-7702</div>
     <h1>三行代码<br>接入AA钱包</h1>
@@ -207,18 +205,18 @@
     <div class="cta-box">
       <h2>获取 Early Access</h2>
       <div class="plans">
-        <div class="plan active" onclick="selectPlan(this,'pro')">
+        <div class="plan active" onclick="selectPlan(this,'AA_Pro_99')">
           <h3>Pro</h3>
           <div class="price">$99<span style="font-size:0.8rem;font-weight:400;color:#888">/月</span></div>
           <div class="desc">无限 UserOperation · 优先支持</div>
         </div>
-        <div class="plan" onclick="selectPlan(this,'white')">
+        <div class="plan" onclick="selectPlan(this,'AA_Whitelabel_499')">
           <h3>白标</h3>
           <div class="price">$499<span style="font-size:0.8rem;font-weight:400;color:#888">/月</span></div>
           <div class="desc">自定义域名 · 去水印 · SLA</div>
         </div>
       </div>
-      <input type="hidden" id="plan" value="pro">
+      <input type="hidden" name="tier" id="tier" value="AA_Pro_99">
       <div class="form-group">
         <input type="email" id="email" placeholder="输入你的邮箱">
       </div>
@@ -231,10 +229,10 @@
   <footer>EasyAA · MIT License</footer>
 
   <script>
-    function selectPlan(el, plan) {
+    function selectPlan(el, tier) {
       document.querySelectorAll('.plan').forEach(function(p){ p.classList.remove('active'); });
       el.classList.add('active');
-      document.getElementById('plan').value = plan;
+      document.getElementById('tier').value = tier;
     }
     function submitEmail() {
       var email = document.getElementById('email').value.trim();
@@ -242,7 +240,7 @@
         alert('请输入有效的邮箱地址');
         return;
       }
-      var plan = document.getElementById('plan').value;
+      var tier = document.getElementById('tier').value;
       document.getElementById('form-area');
       document.querySelector('.plans').style.display = 'none';
       document.querySelector('.form-group').style.display = 'none';
@@ -252,7 +250,7 @@
       fetch('https://formspree.io/f/xdavgeza', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: email, track: 'easyaa', plan: plan, timestamp: new Date().toISOString() })
+        body: JSON.stringify({ email: email, track: 'easyaa', tier: tier, timestamp: new Date().toISOString() })
       }).catch(function(){});
     }
   </script>
