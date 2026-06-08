@@ -1,4 +1,9 @@
 {
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "rewrites": [
+    { "source": "/whalewatch", "destination": "/whalewatch.html" },
+    { "source": "/aasdk", "destination": "/aasdk.html" },
+    { "source": "/privatevote", "destination": "/privatevote.html" }
+  ]
 }
